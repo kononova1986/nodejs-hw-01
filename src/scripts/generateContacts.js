@@ -7,7 +7,7 @@ const generateContacts = async (number) => {
   const newListContacts = Array(number)
     .fill(0)
     .map(() => createFakeContact());
-  contactList.push(newListContacts);
-  await updateContacts(contactList);
+  const data = [...contactList, ...newListContacts];
+  await updateContacts(data);
 };
 generateContacts(5);
